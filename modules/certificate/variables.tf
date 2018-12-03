@@ -32,12 +32,6 @@ variable "dns_names" {
   type        = "list"
 }
 
-variable "ip_addresses" {
-  description = "List of IP addresses for which the certificate will be valid (e.g. 127.0.0.1)."
-  type        = "list"
-  default     = ["127.0.0.1"]
-}
-
 variable "ca_key_algorithm" {
   description = "The name of Algorithm used for CA key"
 }

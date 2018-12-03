@@ -13,8 +13,7 @@ resource "tls_cert_request" "cert" {
   key_algorithm   = "${tls_private_key.cert.algorithm}"
   private_key_pem = "${tls_private_key.cert.private_key_pem}"
 
-  dns_names    = ["${var.dns_names}"]
-  ip_addresses = ["${var.ip_addresses}"]
+  dns_names = ["${var.dns_names}"]
 
   subject {
     common_name  = "${var.common_name}"
