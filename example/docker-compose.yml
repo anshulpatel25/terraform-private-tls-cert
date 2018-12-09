@@ -7,14 +7,14 @@ services:
       - 8080:80
     volumes:
       - type: bind
-        source: ./www.warmonger.in.crt
-        target: /etc/nginx/conf.d/www.warmonger.in.crt
+        source: ./www.anveshak.in.crt
+        target: /etc/nginx/conf.d/www.anveshak.in.crt
       - type: bind
-        source: ./www.warmonger.in.pem
-        target: /etc/nginx/conf.d/www.warmonger.in.pem
+        source: ./www.anveshak.in.pem
+        target: /etc/nginx/conf.d/www.anveshak.in.pem
       - type: bind
-        source: ./www_warmonger.conf
-        target: /etc/nginx/conf.d/www_warmonger.conf
+        source: ./www_anveshak.conf
+        target: /etc/nginx/conf.d/www_anveshak.conf
       
   api:
     image: nginx:latest
@@ -23,11 +23,11 @@ services:
       - 9090:80
     volumes:
       - type: bind
-        source: ./api.warmonger.in.crt
-        target: /etc/nginx/conf.d/api.warmonger.in.crt
+        source: ./api.anveshak.in.crt
+        target: /etc/nginx/conf.d/api.anveshak.in.crt
       - type: bind
-        source: ./api.warmonger.in.pem
-        target: /etc/nginx/conf.d/api.warmonger.in.pem
+        source: ./api.anveshak.in.pem
+        target: /etc/nginx/conf.d/api.anveshak.in.pem
       - type: bind
-        source: ./api_warmonger.conf
-        target: /etc/nginx/conf.d/api_warmonger.conf
+        source: ./api_anveshak.conf
+        target: /etc/nginx/conf.d/api_anveshak.conf
