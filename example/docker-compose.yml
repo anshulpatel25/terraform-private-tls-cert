@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  www:
+    image: nginx:latest
+    ports:
+      - 8443:443
+      - 8080:80
+    volumes:
+      - type: bind
+        source: ./www.warmonger.in.crt
+        target: /etc/nginx/conf.d/www.warmonger.in.crt
+      - type: bind
+        source: ./www.warmonger.in.pem
+        target: /etc/nginx/conf.d/www.warmonger.in.pem
+      - type: bind
+        source: ./www_warmonger.conf
+        target: /etc/nginx/conf.d/www_warmonger.conf
+      
+  api:
+    image: nginx:latest
+    ports:
+      - 9443:443
+      - 9090:80
+    volumes:
+      - type: bind
+        source: ./api.warmonger.in.crt
+        target: /etc/nginx/conf.d/api.warmonger.in.crt
+      - type: bind
+        source: ./api.warmonger.in.pem
+        target: /etc/nginx/conf.d/api.warmonger.in.pem
+      - type: bind
+        source: ./api_warmonger.conf
+        target: /etc/nginx/conf.d/api_warmonger.conf
